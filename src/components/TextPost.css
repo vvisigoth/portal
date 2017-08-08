@@ -1,0 +1,17 @@
+.text
+{
+  width: calc(100% - 40px);
+  margin: 20px;
+}
+.text .title
+{
+  font-size: 2em;
+}
+
+.text .body 
+{
+  font-size: 1em;
+  padding: 20px;
+}
+
+

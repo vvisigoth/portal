@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+body
+{
+  margin: 0;
+  font-family: bau;
+}
+
+
+.column 
+{
+  width: 25%;
+  float: left;
+}
+
