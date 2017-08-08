@@ -1,11 +1,6 @@
-.photo 
+.video 
 {
-  width: calc(100% - 20px);
-  margin: 10px;
-}
+  width: calc(100% - 40px);
+  margin: 20px;
+};
 
-
-img
-{
-  width: 100%;
-}
