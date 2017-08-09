@@ -5,7 +5,7 @@ const feedReceived = (state = {}, data, type) => {
   let tmp ={};
   if (state[type]) {
     // Assume rev chron sorting
-    tmp[state] = [data, ...state[type]];
+    tmp[type] = [...state[type], ...data];
   } else {
     tmp[type] = data;
   }

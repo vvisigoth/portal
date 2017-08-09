@@ -8,15 +8,19 @@ import TextPost from './components/TextPost';
 
 import { connect } from 'react-redux';
 
+import { refreshFeed } from './actions/actions';
+
 const mapStateToProps = state => {
   return {
     feed: state.feed,
-    urb: state.urb
+    urb: state.urb,
+    loading: state.loading
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
+    refreshFeed: (offset, feedType) => dispatch(refreshFeed(offset, feedType))
   }
 };
 
@@ -24,6 +28,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
+    this.handleRefresh = this.handleRefresh.bind(this);
     this.renderPosts = this.renderPosts.bind(this);
     if (!props.feed) {
       props.feed = {tumblr: []};
@@ -34,6 +39,9 @@ class App extends Component {
     console.debug(this.props);
   };
 
+  handleRefresh() {
+    this.props.refreshFeed(this.props.feed.tumblr.length, 'vvisigoth');
+  };
   renderPosts(x) {
     if (!this.props.feed.tumblr) {
       return

@@ -25,12 +25,12 @@ const select = (s) => {
 
 const handleChange = () => {
 
-  console.debug(StoreInstance.getState());
-  
   let neu = select(StoreInstance.getState());
   if (neu !== old) {
     old = neu;
-    StoreInstance.dispatch({type: 'GET_FEED'});
+    // Where are we getting this user name?
+    StoreInstance.dispatch({type: 'GET_FEED', offset: 0, identifier: 'vvisigoth'});
+    //StoreInstance.dispatch({type: 'GET_FEED', offset: 20, identifier: 'vvisigoth'});
   } else {
     return 
   }
@@ -38,4 +38,4 @@ const handleChange = () => {
 
 StoreInstance.subscribe(handleChange);
 
-registerServiceWorker();
+//registerServiceWorker();

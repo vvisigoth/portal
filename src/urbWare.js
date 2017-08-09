@@ -24,8 +24,8 @@ const urbWare = store => next => action => {
     case 'GET_FEED':
       console.debug('GET FEED');
       window.urb.send({
-        'identifier': 'vvisigoth',
-        'id-start': 0
+        'identifier': action.identifier,
+        'id-start': action.offset
       }, {'mark': 'tumblr-get-posts'});
       break
     default:
