@@ -8,10 +8,59 @@ body
   font-family: bau;
 }
 
-
-.column 
-{
-  width: 25%;
+div#loading-indicator {
+  width: 100%;
   float: left;
+}
+
+div#loading-indicator img 
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.show {
+  display: default;
+}
+
+.hide {
+  display: none;
+}
+
+div.more
+{
+  width: 100%;
+  background-color: black;
+  float: left;
+  color: white;
+  padding: 2em 0 2em 0;
+  cursor: pointer;
+}
+
+div.more:active
+{
+  background-color: darkgrey;
+}
+
+.column
+{
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    .column 
+    {
+      width: 50%;
+      float: left;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .column 
+    {
+      width: 25%;
+      float: left;
+    }
 }
 

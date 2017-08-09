@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import loading from './loading.gif';
 import './App.css';
 
 import PhotoPost from './components/PhotoPost';
@@ -73,6 +73,12 @@ class App extends Component {
         </div>
         <div id="col3" className="column">
           {this.renderPosts(3)}
+        </div>
+        <div id="loading-indicator" className={this.props.loading ? 'show' : 'hide'}>
+          <img src={loading}/>
+        </div>
+        <div className={this.props.urb.subscribed ? 'show more' : 'hide more'} onClick={this.handleRefresh}>
+          MOAR
         </div>
       </div>
     );
